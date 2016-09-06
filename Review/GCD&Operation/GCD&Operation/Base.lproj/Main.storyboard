@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8Yc-TO-2ej">
+                                <rect key="frame" x="20" y="28" width="280" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="clt-m4-NcL"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wQ2-NU-nCn">
+                                <rect key="frame" x="28" y="193" width="264" height="39"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="39" id="wO7-rv-FkG"/>
+                                </constraints>
+                                <state key="normal" title="添加"/>
+                                <connections>
+                                    <action selector="addOperation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qvt-50-ceq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6w3-6K-dE3">
+                                <rect key="frame" x="28" y="251" width="264" height="39"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="39" id="af8-ML-Mko"/>
+                                </constraints>
+                                <state key="normal" title="暂停"/>
+                                <connections>
+                                    <action selector="pause:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HLO-st-8jx"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gZ4-dT-SrI">
+                                <rect key="frame" x="28" y="314" width="264" height="39"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="39" id="PvQ-ng-4Xe"/>
+                                </constraints>
+                                <state key="normal" title="继续"/>
+                                <connections>
+                                    <action selector="resume:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qma-SK-VEF"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.94117647059999998" green="0.40000000000000002" blue="0.40000000000000002" alpha="0.57999999999999996" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="8Yc-TO-2ej" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="5qU-Iv-IYK"/>
+                            <constraint firstAttribute="trailing" secondItem="6w3-6K-dE3" secondAttribute="trailing" constant="28" id="CWQ-Vf-s71"/>
+                            <constraint firstAttribute="trailing" secondItem="wQ2-NU-nCn" secondAttribute="trailing" constant="28" id="Hgh-Rd-azH"/>
+                            <constraint firstItem="wQ2-NU-nCn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="28" id="K25-lW-f8l"/>
+                            <constraint firstItem="gZ4-dT-SrI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="28" id="QEk-JO-5Yw"/>
+                            <constraint firstItem="wQ2-NU-nCn" firstAttribute="top" secondItem="8Yc-TO-2ej" secondAttribute="bottom" constant="37" id="TiP-Ti-xvY"/>
+                            <constraint firstItem="6w3-6K-dE3" firstAttribute="top" secondItem="wQ2-NU-nCn" secondAttribute="bottom" constant="19" id="WB7-gp-tUB"/>
+                            <constraint firstItem="gZ4-dT-SrI" firstAttribute="top" secondItem="6w3-6K-dE3" secondAttribute="bottom" constant="24" id="Z7y-mD-uOG"/>
+                            <constraint firstItem="8Yc-TO-2ej" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="htV-Wv-Gp9"/>
+                            <constraint firstItem="6w3-6K-dE3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="28" id="ibj-Rc-NoY"/>
+                            <constraint firstAttribute="trailing" secondItem="gZ4-dT-SrI" secondAttribute="trailing" constant="28" id="qLs-l2-gmx"/>
+                            <constraint firstAttribute="trailing" secondItem="8Yc-TO-2ej" secondAttribute="trailing" constant="20" id="zN4-pd-Ai7"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="8Yc-TO-2ej" id="DSO-3f-djy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-297" y="169"/>
+        </scene>
+    </scenes>
+</document>

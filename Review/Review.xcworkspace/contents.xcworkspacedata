@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:KVO_KVC/KVO_KVC.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Basic/Basic.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:GCD&amp;Operation/GCD&amp;Operation.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:EofBlock/EofBlock.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:C_Review/C_Review.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:&#x8ba9;&#x4f60;&#x5feb;&#x901f;&#x4e0a;&#x624b;Runtime/&#x8ba9;&#x4f60;&#x5feb;&#x901f;&#x4e0a;&#x624b;Runtime.xcodeproj">
+   </FileRef>
+</Workspace>
