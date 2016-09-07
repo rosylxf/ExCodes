@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Animation/Animation.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:NSURLSession/NSURLSession.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:KVO_KVC/KVO_KVC.xcodeproj">
    </FileRef>
    <FileRef

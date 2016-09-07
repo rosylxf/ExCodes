@@ -61,6 +61,7 @@ void drink(id self,SEL sel)
     NSLog(@"%@ %@",self,NSStringFromSelector(sel));
 }
 
+//Method resolution
 //3. 当一个对象调用未实现的方法，会调用这个方法处理,并且会把对应的方法列表传过来.
 // 刚好可以用来判断，未实现的方法是不是我们想要动态添加的方法
 + (BOOL)resolveInstanceMethod:(SEL)sel
@@ -78,6 +79,15 @@ void drink(id self,SEL sel)
     }
 
     return [super resolveInstanceMethod:sel];
+}
+
+/*
+ * Fast forwarding
+ */
+- (id)forwardingTargetForSelector:(SEL)aSelector{
+    
+}
+    
 }
 
 @end
