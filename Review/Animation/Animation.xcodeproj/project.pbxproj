@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		79755C931D80654000289554 /* DragViewAnimationVCL.m in Sources */ = {isa = PBXBuildFile; fileRef = 79755C921D80654000289554 /* DragViewAnimationVCL.m */; };
 		7999605B1D7FDF1B0061A1B4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7999605A1D7FDF1B0061A1B4 /* main.m */; };
 		7999605E1D7FDF1B0061A1B4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7999605D1D7FDF1B0061A1B4 /* AppDelegate.m */; };
 		799960611D7FDF1B0061A1B4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 799960601D7FDF1B0061A1B4 /* ViewController.m */; };
@@ -16,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		79755C911D80654000289554 /* DragViewAnimationVCL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DragViewAnimationVCL.h; sourceTree = "<group>"; };
+		79755C921D80654000289554 /* DragViewAnimationVCL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DragViewAnimationVCL.m; sourceTree = "<group>"; };
 		799960561D7FDF1B0061A1B4 /* Animation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Animation.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7999605A1D7FDF1B0061A1B4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7999605C1D7FDF1B0061A1B4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -62,6 +65,8 @@
 				7999605D1D7FDF1B0061A1B4 /* AppDelegate.m */,
 				7999605F1D7FDF1B0061A1B4 /* ViewController.h */,
 				799960601D7FDF1B0061A1B4 /* ViewController.m */,
+				79755C911D80654000289554 /* DragViewAnimationVCL.h */,
+				79755C921D80654000289554 /* DragViewAnimationVCL.m */,
 				799960621D7FDF1B0061A1B4 /* Main.storyboard */,
 				799960651D7FDF1B0061A1B4 /* Assets.xcassets */,
 				799960671D7FDF1B0061A1B4 /* LaunchScreen.storyboard */,
@@ -152,6 +157,7 @@
 				799960611D7FDF1B0061A1B4 /* ViewController.m in Sources */,
 				7999605E1D7FDF1B0061A1B4 /* AppDelegate.m in Sources */,
 				7999605B1D7FDF1B0061A1B4 /* main.m in Sources */,
+				79755C931D80654000289554 /* DragViewAnimationVCL.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,6 +306,7 @@
 				7999606F1D7FDF1B0061A1B4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

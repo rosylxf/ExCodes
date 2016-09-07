@@ -1,25 +1,119 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZiU-35-6Ny">
+                                <rect key="frame" x="71" y="68" width="178" height="30"/>
+                                <color key="backgroundColor" red="0.94117647059999998" green="0.40000000000000002" blue="0.40000000000000002" alpha="0.57999999999999996" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="cp8-8L-bGN"/>
+                                </constraints>
+                                <state key="normal" title="拖拽动画"/>
+                                <connections>
+                                    <segue destination="PL9-yB-Hv0" kind="push" id="rKA-EG-mo6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ELw-c4-81S">
+                                <rect key="frame" x="71" y="126" width="178" height="30"/>
+                                <color key="backgroundColor" red="0.94117647059999998" green="0.40000000000000002" blue="0.40000000000000002" alpha="0.57999999999999996" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="ubJ-KC-ccY"/>
+                                </constraints>
+                                <state key="normal" title="UIViewAnimation"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Hh-nG-HMX">
+                                <rect key="frame" x="71" y="190" width="178" height="30"/>
+                                <color key="backgroundColor" red="0.94117647059999998" green="0.40000000000000002" blue="0.40000000000000002" alpha="0.57999999999999996" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="7n2-SZ-obh"/>
+                                </constraints>
+                                <state key="normal" title="CABaseAnimation"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="488-cA-WSS">
+                                <rect key="frame" x="71" y="254" width="178" height="30"/>
+                                <color key="backgroundColor" red="0.94117647059999998" green="0.40000000000000002" blue="0.40000000000000002" alpha="0.57999999999999996" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="FEH-RP-3LA"/>
+                                </constraints>
+                                <state key="normal" title="CAKeyframeAnimation"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yl9-iK-M36">
+                                <rect key="frame" x="71" y="322" width="178" height="30"/>
+                                <color key="backgroundColor" red="0.94117647059999998" green="0.40000000000000002" blue="0.40000000000000002" alpha="0.57999999999999996" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="HJY-6f-bI2"/>
+                                </constraints>
+                                <state key="normal" title="CAAnimationGroup"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wAD-9c-CdM">
+                                <rect key="frame" x="71" y="390" width="178" height="30"/>
+                                <color key="backgroundColor" red="0.94117647059999998" green="0.40000000000000002" blue="0.40000000000000002" alpha="0.57999999999999996" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Je4-Kq-YEh"/>
+                                </constraints>
+                                <state key="normal" title="CATransition(过渡动画)"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wAD-9c-CdM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="71" id="2o0-Ha-BVf"/>
+                            <constraint firstItem="ZiU-35-6Ny" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="71" id="9dC-vb-ooZ"/>
+                            <constraint firstAttribute="trailing" secondItem="ZiU-35-6Ny" secondAttribute="trailing" constant="71" id="A9O-Qk-JzY"/>
+                            <constraint firstAttribute="trailing" secondItem="488-cA-WSS" secondAttribute="trailing" constant="71" id="FcQ-CF-7BL"/>
+                            <constraint firstItem="Yl9-iK-M36" firstAttribute="top" secondItem="488-cA-WSS" secondAttribute="bottom" constant="38" id="IE0-PN-miD"/>
+                            <constraint firstItem="9Hh-nG-HMX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="71" id="NTU-k0-YqZ"/>
+                            <constraint firstAttribute="trailing" secondItem="Yl9-iK-M36" secondAttribute="trailing" constant="71" id="OPT-an-NkJ"/>
+                            <constraint firstItem="9Hh-nG-HMX" firstAttribute="top" secondItem="ELw-c4-81S" secondAttribute="bottom" constant="34" id="Qcz-qy-ie7"/>
+                            <constraint firstItem="Yl9-iK-M36" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="71" id="SsN-tJ-YEn"/>
+                            <constraint firstAttribute="trailing" secondItem="9Hh-nG-HMX" secondAttribute="trailing" constant="71" id="SvU-jq-fPa"/>
+                            <constraint firstItem="488-cA-WSS" firstAttribute="top" secondItem="9Hh-nG-HMX" secondAttribute="bottom" constant="34" id="VT5-qh-bDj"/>
+                            <constraint firstItem="wAD-9c-CdM" firstAttribute="top" secondItem="Yl9-iK-M36" secondAttribute="bottom" constant="38" id="Ymn-UX-I3k"/>
+                            <constraint firstItem="ZiU-35-6Ny" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="48" id="hEo-9X-usz"/>
+                            <constraint firstAttribute="trailing" secondItem="ELw-c4-81S" secondAttribute="trailing" constant="71" id="kMv-2d-ZRB"/>
+                            <constraint firstItem="ELw-c4-81S" firstAttribute="top" secondItem="ZiU-35-6Ny" secondAttribute="bottom" constant="28" id="nCc-yp-e3k"/>
+                            <constraint firstItem="488-cA-WSS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="71" id="sO3-ce-caG"/>
+                            <constraint firstAttribute="trailing" secondItem="wAD-9c-CdM" secondAttribute="trailing" constant="71" id="sy1-MQ-aR6"/>
+                            <constraint firstItem="ELw-c4-81S" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="71" id="viN-7n-8Yv"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="71" y="338"/>
+        </scene>
+        <!--Drag View AnimationVCL-->
+        <scene sceneID="Ncx-eF-rul">
+            <objects>
+                <viewController storyboardIdentifier="DragViewAnimationVCL" id="PL9-yB-Hv0" customClass="DragViewAnimationVCL" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JAQ-mZ-6gz"/>
+                        <viewControllerLayoutGuide type="bottom" id="dmY-cA-OhC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gHf-uD-BnT">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="i1b-ZX-zR3"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i6a-6q-LYA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="526" y="338"/>
         </scene>
     </scenes>
 </document>

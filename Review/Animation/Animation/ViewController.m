@@ -30,6 +30,10 @@
     
 }
 
+
+
+// 拖动动画
+
 - (void) doHandlePanAction:(UIPanGestureRecognizer *)paramSender{
     
     CGPoint point = [paramSender translationInView:self.view];

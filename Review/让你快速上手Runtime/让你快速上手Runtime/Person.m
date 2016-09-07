@@ -84,10 +84,9 @@ void drink(id self,SEL sel)
 /*
  * Fast forwarding
  */
-- (id)forwardingTargetForSelector:(SEL)aSelector{
-    
-}
-    
-}
+//- (id)forwardingTargetForSelector:(SEL)aSelector{
+//
+//}
+
 
 @end
