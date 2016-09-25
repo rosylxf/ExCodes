@@ -10,7 +10,7 @@
 
 @interface ViewController ()
 
-@property (nonatomic, copy, nonnull) NSString *title;
+@property (nonatomic, copy, nonnull) NSString *mTitle;
 
 @end
 
@@ -21,18 +21,17 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     
-    [self printSomething];
+//    [self printSomething];
 }
 
 
 - (void)printSomething {
     
-    for (long i = 0; i <1000000; i++) {
-        self.title = [NSString stringWithFormat:@"这是第%lu个title", i];
+    for (long i = 0; i <(unsigned long)-1; i++) {
+        self.mTitle = [NSString stringWithFormat:@"这是第%lu个title", i];   //内存会持续增长
     }
     
     printf("=====");
-    
     
     printf("------");
     
