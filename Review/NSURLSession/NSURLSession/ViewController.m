@@ -96,12 +96,7 @@
             
             [task resume];
         });
-        
-        
-        
-        
-        
-        
+      
     }];
     
     dispatch_group_notify(group, dispatch_get_main_queue(), ^{
