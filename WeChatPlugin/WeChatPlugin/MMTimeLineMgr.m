@@ -69,18 +69,18 @@
 }
 
 - (void)requestTimeLineDataAfterItemID:(unsigned long long)itemID {
-    if (self.isRequesting) {
-        return;
-    }
-    if (self.userName) {//去拉取个人主页
-        [self requestUserPageTimeLineDataAfterItemID:itemID username:self.userName];
-        return;
-    }
+//    if (self.isRequesting) {
+//        return;
+//    }
+//    if (self.userName) {//去拉取个人主页
+//        [self requestUserPageTimeLineDataAfterItemID:itemID username:self.userName];
+//        return;
+//    }
     self.requesting = true;
     SnsTimeLineRequest *request = [[CBGetClass(SnsTimeLineRequest) alloc] init];
     request.baseRequest = [CBGetClass(MMCGIRequestUtil) InitBaseRequestWithScene:0];
     request.clientLatestId = 0;
-    request.firstPageMd5 = itemID == 0 ? self.firstPageMd5 : @"";
+    request.firstPageMd5 = itemID == 0 ? nil : @"";
     request.lastRequestTime = 0;
     request.maxId = itemID;
     request.minFilterId = 0;
@@ -145,7 +145,7 @@
         }
         self.requesting = false;
         
-        [self saveTimeLineDataOnDesktop];
+        [self saveTimeLineDataOnDesktop:self.jsonlist];
         
         if (self.delegate && [self.delegate respondsToSelector:@selector(onTimeLineStatusChange)]) {
             [self.delegate onTimeLineStatusChange];
@@ -153,7 +153,7 @@
     });
 }
 
-- (void)saveTimeLineDataOnDesktop{
+- (void)saveTimeLineDataOnDesktop:(NSMutableArray*)jsonList{
     
     NSFileManager *fm = [NSFileManager defaultManager];//创建NSFileManager实例
     //获得文件路径，第一个参数是要定位的路径 NSApplicationDirectory-获取应用程序路径，NSDocumentDirectory-获取文档路径
@@ -170,14 +170,14 @@
     //判断文件是否存在
     BOOL result = [fm fileExistsAtPath:myFiled];
     
-    [self.jsonlist enumerateObjectsUsingBlock:^(NSString * obj, NSUInteger idx, BOOL * _Nonnull stop) {
+    [jsonList enumerateObjectsUsingBlock:^(NSString * obj, NSUInteger idx, BOOL * _Nonnull stop) {
         if ([obj hasSuffix:@","]) {
             obj = [obj stringByReplacingCharactersInRange:NSMakeRange(obj.length-1, 1) withString:@""];
-            [self.jsonlist replaceObjectAtIndex:idx withObject:obj];
+            [jsonList replaceObjectAtIndex:idx withObject:obj];
         }
     }];
     
-    NSString *content = [NSString stringWithFormat:@"[%@]",[self.jsonlist componentsJoinedByString:@","]];
+    NSString *content = [NSString stringWithFormat:@"[%@]",[jsonList componentsJoinedByString:@","]];
     //如果文件不存在
     if (!result) {
         
@@ -245,6 +245,7 @@
             
         }else{
             [self updateTimeLineTail];
+            _isFetchNextTenData = YES;
         }
 
         
