@@ -165,7 +165,11 @@
     
     NSString *myFiledFolder = [path.relativePath stringByAppendingFormat:@"/wechatTimeLine"];
     
-    NSString *myFiled = [myFiledFolder stringByAppendingFormat:@"/timeline.json"];
+    NSDate * date = [NSDate date];
+    NSDateFormatter * dateFormatter = [[NSDateFormatter alloc] init ];
+    [dateFormatter setDateFormat:@"yyyyMMdd"];
+    NSString * dateStr = [dateFormatter stringFromDate:date];
+    NSString *myFiled = [myFiledFolder stringByAppendingFormat:@"/%@.json", dateStr];
 
     //判断文件是否存在
     BOOL result = [fm fileExistsAtPath:myFiled];
@@ -367,7 +371,7 @@
     [self initData];
     
 
-    NSTimeInterval period = 10; //设置时间间隔
+    NSTimeInterval period = 60*2; //设置时间间隔
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
     _timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue);
     dispatch_source_set_timer(_timer, dispatch_walltime(NULL, 0), period * NSEC_PER_SEC, 0); //每秒执行
