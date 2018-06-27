@@ -10,7 +10,10 @@
 #import "XDSChapterModel.h"
 #import "UIView+XDSHyperLink.h"
 #import "XDSPhotoBrowser.h"
-@interface XDSReadView () <DTAttributedTextContentViewDelegate, MWPhotoBrowserDelegate>
+#import "ZGPopUpView.h"
+#import "CMPopTipView.h"
+
+@interface XDSReadView () <DTAttributedTextContentViewDelegate, MWPhotoBrowserDelegate, CMPopTipViewDelegate>
 
 {
     NSRange _selectRange;
@@ -43,6 +46,8 @@
 
 @property (assign, nonatomic) NSInteger chapterNum;//
 @property (assign, nonatomic) NSInteger pageNum;
+@property (nonatomic,strong) CMPopTipView *m_tipView;
+
 @end
 @implementation XDSReadView
 
@@ -59,6 +64,63 @@
         [self reloadView];
     }
     return self;
+}
+
+- (NSString*)getAnnotationString:(NSString *)noteId{
+    
+    NSString *retString = @"";
+    XDSChapterModel *chapterModel = CURRENT_BOOK_MODEL.chapters[self.chapterNum];
+    
+    NSDictionary *annotationDict = [self sortedDictionary:chapterModel.locationWithPageIdMapping];
+
+    NSString *annotationId = [NSString stringWithFormat:@"${id=%@}", noteId];
+    NSValue *rangeValue = annotationDict[annotationId];
+    NSRange annotationRange = [rangeValue rangeValue];
+    
+    retString = [chapterModel.chapterContent substringWithRange:annotationRange];
+    
+    return retString;
+    
+}
+
+- (NSDictionary*)sortedDictionary:(NSDictionary *)dict{
+    
+    NSMutableDictionary *retDict = [[NSMutableDictionary alloc] initWithCapacity:0];
+    //将所有的key放进数组
+    NSArray *allKeyArray = [dict allKeys];
+    
+    NSArray *afterSortKeyArray = [allKeyArray sortedArrayUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
+                NSComparisonResult resuest = [obj1 compare:obj2 options:NSNumericSearch];
+                return resuest;
+    }];
+    
+//    __weak typeof(self) weakSelf = self;
+    [afterSortKeyArray enumerateObjectsUsingBlock:^(NSString *obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        
+        NSInteger value1;
+        NSInteger value2;
+        NSRange valueRange;
+        if (idx == afterSortKeyArray.count-1) {
+            
+           value1 = [dict[obj] integerValue];
+           XDSChapterModel *chapterModel = CURRENT_BOOK_MODEL.chapters[self.chapterNum];
+           value2 = chapterModel.chapterContent.length;
+           valueRange = NSMakeRange(value1 , value2 - value1);
+
+            
+        }else{
+            
+           value1 = [dict[obj] integerValue];
+           value2 = [dict[afterSortKeyArray[idx+1]] integerValue];
+           valueRange = NSMakeRange(value1 , value2 - value1-3);
+
+        }
+        
+           retDict[obj] = [NSValue valueWithRange:valueRange];
+        
+    }];
+    
+    return [retDict mutableCopy];
 }
 
 // Only override drawRect: if you perform custom drawing.
@@ -234,16 +296,47 @@
     NSURL *hyperLinkUrl = imageView.hyperLinkURL;
     
     if (imageView.url && hyperLinkUrl) {
-#warning show action sheet
+//#warning show action sheet
         
-        NSLog(@"%@", self.content);
+        NSString *noteId = [[hyperLinkUrl.absoluteString componentsSeparatedByString:@"#"] lastObject];
+        NSString *annotionString = [self getAnnotationString:noteId];
         
+        NSLog(@"annotionString == %@", annotionString);
+        
+        if (!annotionString) {
+            return;
+        }
+        
+        if (self.m_tipView) {
+            [self.m_tipView dismissAnimated:YES];
+        }
+        
+        CMPopTipView *popTipView = [[CMPopTipView alloc] initWithMessage:annotionString];
+        popTipView.delegate = self;
+        popTipView.backgroundColor = [UIColor colorWithRed:241./255 green:236./255 blue:223./255 alpha:1.0];
+        popTipView.textColor = [UIColor colorWithRed:80/255 green:80/255 blue:80/255 alpha:1];
+        popTipView.textFont = [UIFont systemFontOfSize:14];
+//        popTipView.animation = arc4random() % 2;
+        popTipView.maxWidth = 300.0;
+        
+        [popTipView presentPointingAtView:tap.view inView:self animated:YES];
+        self.m_tipView = popTipView;
+        
+//        CGPoint point = [tap locationInView:self];
+//        [ZGPopUpView showMessage:annotionString attributes:@{NSForegroundColorAttributeName : [UIColor grayColor],NSFontAttributeName : [UIFont systemFontOfSize:14]} inView:self.superview rect:tap.view.frame];
         
     }else if (imageView.url){
         
         [self showPhotoBrowserWithImage:imageView.url.path];
     }
 }
+
+
+#pragma mark CMPopTipViewDelegate
+- (void)popTipViewWasDismissedByUser:(CMPopTipView *)popTipView {
+    self.m_tipView = nil;
+}
+
 - (void)linkPushed:(DTLinkButton *)button{
     
     if ([XDSReadManager sharedManager].speeching) {

@@ -77,6 +77,8 @@
 		09A74E8820AD1F8E00D24B6F /* UITableView+SDAutoTableViewCellHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = 09A74E8520AD1F8E00D24B6F /* UITableView+SDAutoTableViewCellHeight.m */; };
 		09A74E9720AD209C00D24B6F /* 张学良传.epub in Resources */ = {isa = PBXBuildFile; fileRef = 09A74E9620AD209C00D24B6F /* 张学良传.epub */; };
 		09A74E9B20AD2D1700D24B6F /* 民调局异闻录.txt in Resources */ = {isa = PBXBuildFile; fileRef = 09A74E9A20AD2D1600D24B6F /* 民调局异闻录.txt */; };
+		6A382C3620E36C070020EB35 /* ZGPopUpView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A382C3420E36C060020EB35 /* ZGPopUpView.m */; };
+		6A382C3A20E373F90020EB35 /* CMPopTipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A382C3920E373F90020EB35 /* CMPopTipView.m */; };
 		6AF2678920E0D20700286B16 /* 每天懂一点好玩心理学.epub in Resources */ = {isa = PBXBuildFile; fileRef = 6AF2678820E0D20700286B16 /* 每天懂一点好玩心理学.epub */; };
 		6AF2678F20E0DAEC00286B16 /* yuanze.epub in Resources */ = {isa = PBXBuildFile; fileRef = 6AF2678E20E0DAEC00286B16 /* yuanze.epub */; };
 		9C449BE41395473891A66F43 /* libPods-ZQReaderDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9889D2288DFE1AEBE836A746 /* libPods-ZQReaderDemo.a */; };
@@ -239,6 +241,10 @@
 		09A74E9620AD209C00D24B6F /* 张学良传.epub */ = {isa = PBXFileReference; lastKnownFileType = file; path = "张学良传.epub"; sourceTree = "<group>"; };
 		09A74E9A20AD2D1600D24B6F /* 民调局异闻录.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "民调局异闻录.txt"; sourceTree = "<group>"; };
 		553B4DFD2B29512BA37F863A /* Pods-ZQReaderDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZQReaderDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZQReaderDemo/Pods-ZQReaderDemo.release.xcconfig"; sourceTree = "<group>"; };
+		6A382C3420E36C060020EB35 /* ZGPopUpView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZGPopUpView.m; sourceTree = "<group>"; };
+		6A382C3520E36C060020EB35 /* ZGPopUpView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZGPopUpView.h; sourceTree = "<group>"; };
+		6A382C3820E373F90020EB35 /* CMPopTipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMPopTipView.h; sourceTree = "<group>"; };
+		6A382C3920E373F90020EB35 /* CMPopTipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMPopTipView.m; sourceTree = "<group>"; };
 		6AF2678820E0D20700286B16 /* 每天懂一点好玩心理学.epub */ = {isa = PBXFileReference; lastKnownFileType = file; path = "每天懂一点好玩心理学.epub"; sourceTree = "<group>"; };
 		6AF2678E20E0DAEC00286B16 /* yuanze.epub */ = {isa = PBXFileReference; lastKnownFileType = file; path = yuanze.epub; sourceTree = "<group>"; };
 		9889D2288DFE1AEBE836A746 /* libPods-ZQReaderDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ZQReaderDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -296,6 +302,8 @@
 		09A74D8E20AD1CCB00D24B6F /* ZQReaderDemo */ = {
 			isa = PBXGroup;
 			children = (
+				6A382C3720E373F90020EB35 /* CMPopTipView */,
+				6A382C3220E36C060020EB35 /* ZGPopUpView */,
 				09A74E8120AD1F8E00D24B6F /* SDAutoLayout */,
 				09A74DC120AD1CED00D24B6F /* ZQReader */,
 				09A74D8F20AD1CCB00D24B6F /* AppDelegate.h */,
@@ -612,6 +620,32 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		6A382C3220E36C060020EB35 /* ZGPopUpView */ = {
+			isa = PBXGroup;
+			children = (
+				6A382C3320E36C060020EB35 /* View */,
+			);
+			path = ZGPopUpView;
+			sourceTree = "<group>";
+		};
+		6A382C3320E36C060020EB35 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6A382C3420E36C060020EB35 /* ZGPopUpView.m */,
+				6A382C3520E36C060020EB35 /* ZGPopUpView.h */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6A382C3720E373F90020EB35 /* CMPopTipView */ = {
+			isa = PBXGroup;
+			children = (
+				6A382C3820E373F90020EB35 /* CMPopTipView.h */,
+				6A382C3920E373F90020EB35 /* CMPopTipView.m */,
+			);
+			path = CMPopTipView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -825,6 +859,7 @@
 				09A74E7920AD1CEE00D24B6F /* XDSMenuTopView.m in Sources */,
 				09A74E7320AD1CEE00D24B6F /* XDSMarkViewController.m in Sources */,
 				09A74E5720AD1CEE00D24B6F /* CXMLNode_XPathExtensions.m in Sources */,
+				6A382C3620E36C070020EB35 /* ZGPopUpView.m in Sources */,
 				09A74E7D20AD1CEE00D24B6F /* XDSLightView.m in Sources */,
 				09A74E7420AD1CEE00D24B6F /* XDSNoDataView.m in Sources */,
 				09A74E7520AD1CEE00D24B6F /* XDSNoteViewController.m in Sources */,
@@ -842,6 +877,7 @@
 				09A74E5E20AD1CEE00D24B6F /* CXMLDocument_PrivateExtensions.m in Sources */,
 				09A74E8820AD1F8E00D24B6F /* UITableView+SDAutoTableViewCellHeight.m in Sources */,
 				09A74E5F20AD1CEE00D24B6F /* CXHTMLDocument.m in Sources */,
+				6A382C3A20E373F90020EB35 /* CMPopTipView.m in Sources */,
 				09A74E4820AD1CEE00D24B6F /* XDSReaderUtil.m in Sources */,
 				09A74E7820AD1CEE00D24B6F /* XDSReadRootView.m in Sources */,
 				09A74E5520AD1CEE00D24B6F /* CXMLNode.m in Sources */,
