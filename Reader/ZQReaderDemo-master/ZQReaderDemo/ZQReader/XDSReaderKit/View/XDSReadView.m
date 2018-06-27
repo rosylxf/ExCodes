@@ -316,7 +316,9 @@
         popTipView.backgroundColor = [UIColor colorWithRed:241./255 green:236./255 blue:223./255 alpha:1.0];
         popTipView.textColor = [UIColor colorWithRed:80/255 green:80/255 blue:80/255 alpha:1];
         popTipView.textFont = [UIFont systemFontOfSize:14];
-//        popTipView.animation = arc4random() % 2;
+        popTipView.borderColor = [UIColor colorWithRed:100/255 green:100/255 blue:100/255 alpha:0.4];
+        popTipView.borderWidth = 0.5;
+        //        popTipView.animation = arc4random() % 2;
         popTipView.maxWidth = 300.0;
         
         [popTipView presentPointingAtView:tap.view inView:self animated:YES];
