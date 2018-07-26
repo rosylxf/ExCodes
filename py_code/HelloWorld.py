@@ -30,10 +30,10 @@
 
 # print('{} a word she can get what she {} for.'.format('With','came'))
 
-
-file = open('/Users/cbs/Desktop/text.txt', 'w')
-file.write('hello world')
-
+#
+# file = open('/Users/cbs/Desktop/text.txt', 'w')
+# file.write('hello world')
+#
 
 
 
