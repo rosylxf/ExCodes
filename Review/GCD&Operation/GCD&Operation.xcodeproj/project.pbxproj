@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		796A5DC31D9BE58300718DC3 /* GCDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 796A5DC21D9BE58300718DC3 /* GCDViewController.m */; };
 		797942271D70D6A8004B17B8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 797942261D70D6A8004B17B8 /* main.m */; };
 		7979422A1D70D6A8004B17B8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 797942291D70D6A8004B17B8 /* AppDelegate.m */; };
 		7979422D1D70D6A8004B17B8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7979422C1D70D6A8004B17B8 /* ViewController.m */; };
@@ -18,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		796A5DC11D9BE58300718DC3 /* GCDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDViewController.h; sourceTree = "<group>"; };
+		796A5DC21D9BE58300718DC3 /* GCDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDViewController.m; sourceTree = "<group>"; };
 		797942221D70D6A8004B17B8 /* GCD&Operation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GCD&Operation.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		797942261D70D6A8004B17B8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		797942281D70D6A8004B17B8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -64,6 +67,8 @@
 		797942241D70D6A8004B17B8 /* GCD&Operation */ = {
 			isa = PBXGroup;
 			children = (
+				796A5DC11D9BE58300718DC3 /* GCDViewController.h */,
+				796A5DC21D9BE58300718DC3 /* GCDViewController.m */,
 				798DD6F91D70E36500B5740A /* DownOperation.h */,
 				798DD6FA1D70E36500B5740A /* DownOperation.m */,
 				797942281D70D6A8004B17B8 /* AppDelegate.h */,
@@ -160,6 +165,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				798DD6FE1D710C3E00B5740A /* EOCSingletonClass.m in Sources */,
+				796A5DC31D9BE58300718DC3 /* GCDViewController.m in Sources */,
 				7979422D1D70D6A8004B17B8 /* ViewController.m in Sources */,
 				7979422A1D70D6A8004B17B8 /* AppDelegate.m in Sources */,
 				797942271D70D6A8004B17B8 /* main.m in Sources */,
